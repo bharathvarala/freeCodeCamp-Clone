@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+     #img{
+         margin-left: 16%;
+     }
+     a{
+         color:black;
+     }
+     .button1{
+        background-color:rgb(217, 207, 207);
+        color: rgb(61, 57, 57);
+        padding: 8px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 22px;
+        margin: 2px 2px;
+        border-color: rgb(27, 25, 25);
+        cursor: pointer;
+        height: 50px;
+        width:150px;
+     }
+     .button1:hover {
+        background:black;
+        color: white; 
+      }
+      .button2{
+        background-color:rgb(217, 207, 207);
+        color: rgb(61, 57, 57);
+        padding: 8px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 2px 2px;
+        border-color: rgb(27, 25, 25);
+        cursor: pointer;
+        height: 50px;
+        width:150px;
+     }
+     .button2:hover {
+        background:black;
+        color: white; 
+      }
+      body{
+            /* background-color: lightblue; */
+            margin: auto;
+            font-family: 'Roboto Mono', monospace;            
+        }
+        #search{
+            position: absolute;
+            margin-left: 30px;
+            margin-top: 7.75px;
+            color: lightgray;
+        
+        }
+        .input-icons{
+            margin-bottom: 10px;
+        }
+        
+        header{
+            color: aliceblue;
+            position: sticky;
+            padding: 0px 0px 2px;
+            background-color: #0a0a23;
+            font-family: 'Roboto Mono', monospace;
+            top: 0;
+            font-size: 24px;
+        }
+        .nav-bar-left{
+            margin-left: 25px;
+            font-size: 18px;
+            padding: 3px 0px 3px;
+            min-width: 475px;
+            color: white;
+            background-color: #3b3b4f;
+            border: 0px;
+          text-decoration-color: white;
+        }
+        .nav-bar-left::placeholder{
+          color: #d0d0d5;
+        }
+        .nav-bar-center{
+            position: relative;
+            left: 150px;
+        }
+        .dropbtn {
+  background-color: #0a0a23;
+  color: aliceblue;
+  padding: 4px 8px;
+  margin-bottom: 2px;
+  font-size: 18px;
+  border-color: aliceblue;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: aliceblue;
+  color: #0a0a23;
+  border-color: #0a0a23;
+}
+
+.dropdown {
+  position: relative;
+  left: 600px;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #0a0a23;
+  min-width: 200px;
+  font-size: 18px;
+  overflow: auto;
+  /* box-shadow: 0px 8px 16px 0px aliceblue; */
+  z-index: 1;
+}
+
+.dropdown-content a{
+  color: aliceblue;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.selecting{
+  width: 150px;
+  background-color: #0a0a23;
+  color: aliceblue;
+}
+.sign{
+  background-color: #feac32;
+  border-color: rgb(241, 160, 42);
+  border-width: 3px;
+  font-size: 18px;
+  color: #0a0a23;
+  padding: 2px 8px ;
+  font-weight: 400;
+
+}
+
+.sign:hover{
+  background-color: #fecc4c;
+  border-color: #f1a02a;
+  cursor: pointer;
+}
+
+.dropdown a:hover {background-color: aliceblue; color: #0a0a23; }
+
+.show {display: block;}
+
+
+    footer{
+        background-color: #dfdfe2;
+        font-size: 95%;
+        font-weight: lighter;
+    }
+    footer a{
+        color: #3b3b4f;
+        text-decoration: none;
+    }
+    footer a:hover{
+        border-bottom: 2px solid #3b3b4f;
+    }
+    
+    .left-foot{
+      padding-top: 50px;
+      padding-left: 50px;
+      float: left;
+      max-width: 40%;
+    }
+    .right-foot{
+      float: right;
+      position: absolute;
+      left: 42%;
+      /* margin-left: 15px; */
+      max-width: 100%;
+    }
+    .foot{
+      padding: 25px 70px 100px;
+      float: left;
+    }
+    .right-foot h4{
+      position: relative;
+      left: 250px;
+    }
+    .part1{
+      position: absolute;
+      padding-left: 50px;
+      width: 300px;
+    }
+    .part2{
+      position: absolute;
+      left: 270px;
+      width: 300px;
+      /* width: 20%; */
+    }
+    .part3{
+      float: right;
+      position: absolute;
+      width: 300px;
+      left: 450px;
+
+    }
+    .about{
+      position: absolute;
+      padding-right: 80px;
+      background-color: #dfdfe2;
+      font-size: 17px;
+      padding-bottom: 35px;
+    }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <title>Privacy Policy</title>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            
+            <i id="search" class="fa fa-search input-icons"></i>
+            <input type="text" placeholder="      Search 8,000+ tutorials" class="nav-bar-left">
+            <span class="nav-bar-center"><strong>freeCodeCamp</strong><i class="fa fa-free-code-camp fa-lg" aria-hidden="true"></i></span>
+            <div class="dropdown">
+                <button onclick="window.open('https://forum.freecodecamp.org/')" class="dropbtn">Forum</button>
+                <button class="sign" onclick="window.open('donate.html','_self')">Donate</button>
+            </div>
+            
+        </div>
+    </header>
+    
+    <h4 style="font-family: arial;margin-left: 16%;">
+        MAY 25, 2018/ <a href="https://www.freecodecamp.org/news/tag/freecodecamp/">#FREECODECAMP</a>
+    </h4>
+    <h1 style="font-family: arial; font-size: 45px;margin-left: 16%;" >
+        freeCodeCamp.org Privacy Policy: Questions<br>and Answers
+        </h1>
+    <br>
+    <div id="img">
+        <img src="https://cdn-media-2.freecodecamp.org/w1280/5f9cad5a740569d1a4ca9edf.jpg" alt="Larson" style="width: 1050px;height: 600px;">
+
+    </div><br>
+    <h2 align="center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        We take your privacy seriously. And we give you full control<br>over your data.
+
+    </h2>
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>Does freeCodeCamp collect anonymous<br>data?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        When you use use the freeCodeCamp.org website, we may collect some<br>anonymous data so we can understand how people are using freeCodeCamp,<br>and basic facts like which browser they're using.
+    </p>
+
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>In what situations does freeCodeCamp<br>collect personal data?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        If you create a freeCodeCamp account, we will collect some personal data so we<br>can follow your progress toward earning developer certifications, and so you<br>can customize your developer portfolio.
+    </p>
+
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>Can I use freeCodeCamp anonymously?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        Yes. You can access all of freeCodeCamp's articles, videos, podcasts, and<br>interactive coding lessons without creating an account. And if you don't create<br>an account, we won't collect any personal data about you.
+    </p>
+    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        This said, if you want to earn freeCodeCamp's developer certifications, you will<br>need to create an account so we can follow your progress through our<br>curriculum.
+    </p>
+    
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>If I create an account, what data will you<br>collect?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        We'll ask you for your email address so you can use it to sign into<br>freeCodeCamp, and so we can send you announcements and helpful<br>programming-related links.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        When you create an account on freeCodeCamp, we publish a developer<br>portfolio page for you on freeCodeCamp.org. If you want, you can add details<br>about yourself, like your name, geographic location, and a link to your personal<br>website.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        By default, your developer portfolio will show which freeCodeCamp lessons<br>you have completed and when you completed them. It will also show your code<br>solutions for our algorithm challenges, links any projects you've submitted,<br> and any developer certifications you've earned.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        You have full control over your data, and can set any of these details to private,<br>or delete them at any time.
+    </p>
+
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>You said I have full control over my data.<br> What does that mean, exactly?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        It means that at any time, you can download all of your data in a convenient<br>JSON format.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        You can control which data shows up on your developer portfolio.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        You can also delete any of your personal data, or even delete your entire<br>account.
+    </p>
+
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>When I delete my personal data from<br>freeCodeCamp, is it really deleted from<br>freeCodeCamp's servers?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        Yes. When you delete personal data from freeCodeCamp, we immediately<br>delete it from our servers.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        We make emergency backups of our database every day, and we delete each of<br>these backups after a few days. So within a few days, your personal data won't<br>even exist in our backups.
+    </p>
+
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>Does freeCodeCamp meet Europe's GDPR<br>privacy regulations?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        Yes. freeCodeCamp respects the privacy rights covered by Regulation (EU)<br>2016/679 - the European Union's General Data Protection Regulation (GDPR).<br> Our legal team has studied the GDPR, and we've built new features to comply<br>with all of its rules.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        Even though GDPR only protects European citizens, freeCodeCamp is<br>extending these protections to everyone all over the world.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        freeCodeCamp has organized all the information that GDPR requires us to give<br>you into this easy-to-read question-and-answer format. Our goal is to inform<br>you of your specific rights to access data, erase it, port it, rectify it, and object to<br>automated decision-making.
+    </p>
+
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>Who has access to my personal data?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        Even though freeCodeCamp has thousands of volunteers, none of those people<br>have access to your private data.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        freeCodeCamp has a few full-time staff, some of whom work directly on our<br>databases. They have the ability to view your private data, but only do so when<br>providing you with technical support.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        As for the personal data that you choose to share on your developer portfolio,<br>anyone on the internet can see it by navigating to your developer portfolio's<br>public URL. Again, we've given you full control over what parts of your<br>developer profile are public.
+    </p>
+
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>What is freeCodeCamp's Donor Privacy<br>Policy?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        freeCodeCamp will not share our donors' names or personal information with<br>anyone outside of our nonprofit organization's team. Donors may choose to<br>display that they are donating to freeCodeCamp on their freeCodeCamp<br>profile. Otherwise, donor information will only be used to process donations<br>and send email confirmations. This policy applies to any written, verbal, or<br>electronic communication.
+    </p>
+
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>Can any other organizations access my data?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        We don't sell your data to anyone. In order to provide service to you, your data<br>does pass through some other services. All of these companies are based in the<br>United States.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        We use Amazon Web Services, Azure, and mLab for our servers and databases.<br>You can read the privacy policy for<a href="https://www.w3schools.com">Amazon Web Services</a> , <a href="https://www.w3schools.com">Microsoft Azure</a>,<br>and<a href="https://www.w3schools.com">mLab</a> .
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        We use Stripe and PayPal to process donations. You can read the privacy policy<br>for <a href="https://www.w3schools.com">Stripe</a> and for <a href="https://www.w3schools.com">PayPal.</a>
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        We use the CloudFlare and Netlify Content Delivery Networks so that<br>freeCodeCamp is fast in all parts of the world. You can read the privacy policy<br>for <a href="https://www.w3schools.com">Netflix</a> and <a href="https://www.w3schools.com">Netlify</a> online.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        We use Auth0 to sign you into freeCodeCamp. You can read <a href="https://www.w3schools.com">the privacy policy<br>for Auth0 online.</a>
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        We use Google Analytics to help us understand the demographics of our<br>community and how people are using freeCodeCamp. You can opt out of Google<br>Analytics on freeCodeCamp <a href="https://www.w3schools.com">by installing this browser plugin</a>. You can read <a href="https://www.w3schools.com">the privacy<br>policy for Google Analytics</a> online. We also show Google ads in some<br>parts of the freeCodeCamp website.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        For your convenience, we give you the option to sign in using GitHub or Google,<br>if you don't want to use your email address to sign in. If you choose to use one of<br>these sign in options, some of your freeCodeCamp data will be shared with<br>these companies. You can read <a href="https://www.w3schools.com">Amazon Web Services</a> and<a href="https://www.w3schools.com">Google.</a>
+
+    </p>
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>I have questions about my privacy on<br>freeCodeCamp.</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        We're happy to answer them. Email us at privacy@freecodecamp.org.
+    </p>
+
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 35px; margin-left: 25%;">
+        <b>How can I find out about changes?</b>
+    </h2>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        This version of freeCodeCamp’s privacy questions and answers took effect May<br>25, 2018.
+    </p>
+    <p  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:24px; margin-left: 25%;">
+        freeCodeCamp will announce the next version by email. In the meantime,<br>freeCodeCamp may update its contact information in these questions and<br>answers by updating this page (https://privacy-policy.freecodecamp.org).<br>freeCodeCamp may change how it announces changes in a future version of<br>these questions and answers.
+    </p>
+    <h2  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 37px; margin-left: 25%;">
+        <b>That's all, folks. Know your privacy rights,<br>and stay safe out there!</b>
+    </h2>
+    <br>
+    <hr width="50%">
+    <br>
+
+    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;font-size: 22px; margin-left: 25%;">
+        If this article was helpful,<button class="button1" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">tweet it</button> 
+    </p>
+    <br>
+    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;font-size: 22px; margin-left: 25%;">
+        Learn to code for free. freeCodeCamp's open source curriculum has helped<br>more than 40,000 people get jobs as developers.<button class="button2" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Get started</button> 
+    </p>
+    <footer class="foot">
+        <div class="left-foot">
+            <p>
+                freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)
+            </p>
+            <br>
+            <p>
+                Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.
+            </p>
+            <br>
+            <p>
+                Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.
+            </p>
+            <p>
+                You can <a href="donate.html"> <b> make a tax-deductible donation here.</b></a>
+            </p>
+
+        </div>
+        <div class="right-foot">
+            <h4>Trending Guides</h4>
+            <div class="part1">
+                <p><a href="https://www.freecodecamp.org/news/zoom-screen-sharing-how-to-share-my-screen-on-zoom-solved/">Zoom Screen Sharing</a></p>
+                <p><a href="https://www.freecodecamp.org/news/decimal-place-value-hundreds-thousandths-and-beyond/">Decimal Place Value</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-get-into-bios-in-windows-10-bios-setup-pc-guide/">How to Get Into BIOS</a></p>
+                <p><a href="https://www.freecodecamp.org/news/string-to-int-in-c-how-to-convert-a-string-to-an-integer-example/">String to Int in C++</a></p>
+                <p><a href="https://www.freecodecamp.org/news/what-is-msmpeng-exe-why-is-it-of-high-cpu-disk-usage/">What is msmpeng.exe</a></p>
+                <p><a href="https://www.freecodecamp.org/news/why-is-my-facetime-not-working/">Facetime Not Working</a></p>
+                <p><a href="dim.html">Desktop Icons Missing</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-copy-and-paste-on-a-computer-windows-pc-keyboard-shortcut-guide/">How to Copy and Paste</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-delete-a-page-in-word-remove-blank-or-extra-pages/">Delete a Page in Word</a></p>
+                <p><a href="https://www.freecodecamp.org/news/vcruntime140-dll-was-not-found-solved-on-windows-10-pc/">vcruntime140.dll Error</a></p>
+
+            </div>
+            <div class="part2">
+                <p><a href="https://www.freecodecamp.org/news/c-vector-std-pattern-vector-in-cpp-with-example-code/">C++ Vector</a></p>
+                <p><a href="https://www.freecodecamp.org/news/what-is-cpu-meaning-definition-and-what-cpu-stands-for/">What is CPU</a></p>
+                <p><a href="https://www.freecodecamp.org/news/ipv4-vs-ipv6-what-is-the-difference-between-ip-addressing-schemes/">IPV4 vs IPV6</a></p>
+                <p><a href="iptv.html">What is IPTV</a></p>
+                <p><a href="https://www.freecodecamp.org/news/html-font-size-how-to-change-text-size-using-inline-css-style/">HTML Font Size</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-change-mouse-dpi-settings-in-windows-10/">Change Mouse DPI</a></p>
+                <p><a href="gif page.html">How to Make a GIF</a></p>
+                <p><a href="https://www.freecodecamp.org/news/git-rename-branch-how-to-change-a-local-branch-name/">Git Rename Branch</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-make-a-video-game-create-your-own-game-from-scratch-tutorial/">Make a Video Game</a></p>
+                <p><a href="https://www.freecodecamp.org/news/media-query-css-example-max-and-min-screen-width-for-mobile-responsive-design/">CSS Media Queries</a></p>
+
+            </div>
+            <div class="part3">
+                <p><a href="https://www.freecodecamp.org/news/dat-file-how-to-open-the-dat-file-format-extension/">How to Open .dat Files</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-record-a-phone-call-on-iphone/">Record Calls on iPhone</a></p>
+                <p><a href="desc order.html">Ascending vs Descending</a></p>
+                <p><a href="https://www.freecodecamp.org/news/mailto-link-how-to-make-an-html-email-link-example-code/">HTML Email Link Tutorial</a></p>
+                <p><a href="https://www.freecodecamp.org/news/list-comprehension-in-python-with-code-examples/">Python List Comprehension</a></p>
+                <p><a href="https://www.freecodecamp.org/news/password-protect-zip-file-windows10/">Password Protect Zip File</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-recover-an-unsaved-word-document-restore-a-deleted-word-file/">Restore Deleted Word File</a></p>
+                <p><a href="https://www.freecodecamp.org/news/what-is-software-engineering-how-to-become-a-software-engineer/">Software Engineering Guide</a></p>
+                <p><a href="https://www.freecodecamp.org/news/what-is-my-ip-address-for-my-router-how-to-find-your-wifi-address/">How to Find Your IP Address</a></p>
+                <p><a href="https://www.freecodecamp.org/news/iphone-downloads-folder-where-are-my-downloads-ios-and-ipad/">How to Find iPhone Download</a></p>
+                
+            </div>
+        </div>
+    </footer>
+    <hr style="border-top: 3px solid #aaa; margin: 0px 50px 0px 50px;">
+    <footer class="about">
+      <pre>
+        <a href="about.html">About</a>  <a href="#">Alumni Network</a>  <a href="#">Open Source</a>  <a href="#">Shop</a>  <a href="#">Support</a>  <a href="#">Sponsors</a>  <a href="#">Academic Honesty</a>  <a href="#">Code of Conduct</a>  <a href="privacypolicy.html">Privacy Policy</a>  <a href="#">Terms of Service</a>  <a href="#">Copyright Policy</a></pre>
+      
+    </footer>
+</body>
+<script>
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</html>

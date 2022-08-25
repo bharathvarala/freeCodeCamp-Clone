@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* background-color: lightblue; */
+            margin: auto;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        #search {
+            position: absolute;
+            margin-left: 30px;
+            margin-top: 7.75px;
+            color: lightgray;
+
+        }
+
+        .input-icons {
+            margin-bottom: 10px;
+        }
+
+        header {
+            color: aliceblue;
+            position: sticky;
+            padding: 0px 0px 2px;
+            background-color: #0a0a23;
+            font-family: 'Roboto Mono', monospace;
+            top: 0;
+            font-size: 24px;
+        }
+
+        .nav-bar-left {
+            margin-left: 25px;
+            font-size: 18px;
+            padding: 3px 0px 3px;
+            min-width: 475px;
+            color: white;
+            background-color: #3b3b4f;
+            border: 0px;
+            text-decoration-color: white;
+        }
+
+        .nav-bar-left::placeholder {
+            color: #d0d0d5;
+        }
+
+        .nav-bar-center {
+            position: relative;
+            left: 150px;
+        }
+
+        .dropbtn {
+            background-color: #0a0a23;
+            color: aliceblue;
+            padding: 4px 8px;
+            margin-bottom: 2px;
+            font-size: 18px;
+            border-color: aliceblue;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: aliceblue;
+            color: #0a0a23;
+            border-color: #0a0a23;
+        }
+
+        .dropdown {
+            position: relative;
+            left: 640px;
+            display: inline-block;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #0a0a23;
+            min-width: 200px;
+            font-size: 18px;
+            overflow: auto;
+            /* box-shadow: 0px 8px 16px 0px aliceblue; */
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: aliceblue;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .selecting{
+            width: 150px;
+            font-size: 18px;
+            padding-top :5px; 
+            padding-bottom: 5px;
+            background-color: #0a0a23;
+            color: aliceblue;
+        }
+        .selecting:hover{
+            background-color: aliceblue;
+            color: #0a0a23;
+        }
+
+        .sign{
+  background-color: lightgray;
+  border-color: lightgrey;
+  border-width: 3px;
+  font-size: 18px;
+  color: #0a0a23;
+  padding: 2px 8px ;
+  font-weight: 400;
+
+}
+
+.sign:hover{
+  /* background-color: #fecc4c;
+  border-color: #f1a02a; */
+  cursor: pointer;
+}
+
+        .dropdown a:hover {
+            background-color: aliceblue;
+            color: #0a0a23;
+        }
+
+        .show {
+            display: block;
+        }
+
+
+        footer {
+            background-color: #dfdfe2;
+            font-size: 95%;
+            font-weight: lighter;
+        }
+
+        footer a {
+            color: #3b3b4f;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            border-bottom: 2px solid #3b3b4f;
+        }
+
+        .left-foot {
+            padding-top: 50px;
+            padding-left: 50px;
+            float: left;
+            max-width: 40%;
+        }
+
+        .right-foot {
+            float: right;
+            position: absolute;
+            left: 42%;
+            /* margin-left: 15px; */
+            max-width: 100%;
+        }
+
+        .foot {
+            padding: 25px 70px 100px;
+            float: left;
+        }
+
+        .right-foot h4 {
+            position: relative;
+            left: 250px;
+        }
+
+        .part1 {
+            position: absolute;
+            padding-left: 50px;
+            width: 300px;
+        }
+
+        .part2 {
+            position: absolute;
+            left: 270px;
+            width: 300px;
+            /* width: 20%; */
+        }
+
+        .part3 {
+            float: right;
+            position: absolute;
+            width: 300px;
+            left: 450px;
+
+        }
+
+        .about {
+            position: absolute;
+            padding-right: 40px;
+            background-color: #dfdfe2;
+            font-size: 17px;
+            padding-bottom: 35px;
+        }
+
+        .container {
+            width: 625px;
+            margin: auto;
+            font-family: Lato, sans-serif;
+            font-size: 1.17rem;
+            box-sizing: border-box;
+        }
+
+        .mainhead,
+        h1 {
+            font-family: Roboto Mono, monospace;
+            font-weight: 700;
+            font-size: 2.5rem !important;
+            overflow-wrap: break-word;
+            text-align: center;
+        }
+
+        .alertinfo {
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+            color: #31708f;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+
+        body {
+            background-color: #f5f6f7;
+        }
+
+        p {
+            padding: 15px 0px;
+
+        }
+
+        #c1,
+        #c2,
+        #c3,
+        #c4,
+        #c5 {
+            background-color: #fff;
+            font-family: Roboto Mono, monospace;
+            padding: 5px 5px;
+            padding-bottom: 70px;
+            box-sizing: border-box;
+            margin: auto;
+        }
+
+        #c1:hover,
+        #c2:hover,
+        #c3:hover {
+            /* color: antiquewhite;
+            background-color: #31708f; */
+            cursor: pointer;
+        }
+
+        li {
+            font-family: Roboto Mono, monospace;
+            font-weight: 700;
+            font-size: 21.6px;
+            line-height: 23.76px;
+            /* margin: auto; */
+        }
+
+        #list1_data,
+        #showpre,
+        #list2_data,
+        #showpre2,
+        #list3_data,
+        #showpre3,
+        #list4_data,
+        #showpre4,
+        #list5_data,
+        #showpre5 {
+
+            font-family: sans-serif;
+            font-weight: 400;
+
+        }
+
+        .list1,
+        .list2,
+        .list3,
+        .list4,
+        .list5 {
+            height: 120px;
+        }
+
+        .myimg {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            left: 225px;
+        }
+
+        #list1div,
+        #list2div,
+        #list3div,
+        #list4div,
+        #list5div {
+            height: 230px;
+        }
+
+        #list1div:hover,
+        #list2div:hover,
+        #list3div:hover,
+        #list4div:hover,
+        #list5div:hover {
+            color: black;
+            background-color: #d0d0d5;
+            ;
+            cursor: pointer;
+        }
+
+        .list1:hover,
+        .list2:hover,
+        .list3:hover,
+        .list4:hover,
+        .list5:hover {
+            color: black;
+            background-color: #d0d0d5;
+            cursor: pointer;
+        }
+
+        td:hover {
+            background-color: #dfdfe2;
+            ;
+        }
+
+        #endbutton {
+            width: 100%;
+            height: 50px;
+            font-family: roboto Mono;
+            font-size: 18px;
+            line-height: 25.7143px;
+            border: 2px solid black;
+        }
+
+        #endbutton:hover {
+            color: white;
+            background-color: rgb(27, 27, 50);
+
+        }
+        .myimg{
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-bar">
+            
+            <i id="search" class="fa fa-search input-icons"></i>
+            <input type="text" placeholder="      Search 8,000+ tutorials" class="nav-bar-left">
+            <span class="nav-bar-center"><strong>freeCodeCamp</strong><i class="fa fa-free-code-camp fa-lg" aria-hidden="true"></i></span>
+            <div class="dropdown">
+                <button onclick="my1Function()" class="dropbtn">Menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="donate.html">Donate</a>
+                  <a href="curr.html">Curriculum</a>
+                  <a href="profile.html">Profile</a>
+                  <a href="#">Settings</a>
+                  <a href="https://forum.freecodecamp.org/">Forum</a>
+                  <a href="news.html">News</a>
+                  <a href="https://coderadio.freecodecamp.org/">Radio</a>
+                  <span>Language: </span>
+                  <select name="ntg" class="selecting">
+                    <option value="eng">English</option>
+                    <option value="hind">Hindi</option>
+                  </select>
+                  <a href="index.html" target="_self">Sign out</a>
+                </div>
+                <button class="sign" onclick="window.open('profile.html','_self')"><i class="fa fa-user fa-lg" aria-hidden="true"></i></button>
+            </div>
+            
+        </div>
+    </header>
+    <div class="container">
+        <div>
+            <h1 class="mainhead">Responsive Web Design</h1>
+            <img class="myimg" src="img1.png" alt="A Tablet Image">
+        </div>
+        <p>
+            In this Responsive Web Design Certification, you'll learn the languages that developers use to build
+            webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.
+        </p>
+        <p>
+            First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern
+            techniques like CSS variables by building a penguin, and best practices for accessibility by building a web
+            form.
+        </p>
+        <p>
+            Finally, you'll learn how to make webpages that respond to different screen sizes by building a Twitter card
+            with Flexbox, and a complex blog layout with CSS Grid.
+        </p>
+        <div class="alertinfo">
+            Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If
+            you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking
+            the course.
+        </div>
+        <br>
+        <h1 class="mainhead">Courses</h1>
+        <div id="c1">
+            <ul type="CIRCLE">
+                <div class="list1" id="div1" onclick="myFunction()">
+                    <li>
+                        <pre id="change">Learn HTML by Building a Cat Photo App &#65088;</pre>
+                    </li>
+                </div>
+                <div id="show" hidden>
+                    <pre id="showpre">HTML tags give a webpage its structure. You can use HTML tags 
+to add photos, buttons, and other elements to your webpage.
+
+In this course, you'll learn the most common HTML tags by 
+building your own cat photo app.
+</pre>
+                    <table cellpadding="10">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>32</td>
+                            <td>33</td>
+                            <td>34</td>
+                            <td>35</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>40</td>
+                            <td>41</td>
+                            <td>42</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>45</td>
+                            <td>46</td>
+                            <td>47</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td>50</td>
+                            <td>51</td>
+                            <td>52</td>
+                            <td>53</td>
+                            <td>54</td>
+                            <td>55</td>
+                            <td>56</td>
+                            <td>57</td>
+                            <td>58</td>
+                            <td>59</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>61</td>
+                            <td>62</td>
+                            <td>63</td>
+                            <td>64</td>
+                            <td>65</td>
+                            <td>66</td>
+                            <td>67</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="list1">
+                    <li>
+                        <pre>Learn Basic CSS by Building a Cafe Menu&#65088</pre>
+                    </li>
+                </div>
+                <div class="list1">
+                    <li>
+                        <pre>Learn Basic CSS by Building a Set of   &#65088
+Colored Marker</pre>
+                    </li>
+                </div>
+                <div class="list1">
+                    <li>
+                        <pre>Learn HTML Forms by Building a         &#65088
+Registraton Form</pre>
+                    </li>
+                    <br>
+                </div>
+                <div id="list1div">
+                    <br>
+                    <span class="alertinfo">
+                        Certification Project
+                    </span>
+                    <br><br>
+                    <li class="list1">
+                        Survey Form
+                        <div>
+                            <pre id="list1_data">This is one of the required projects to earn your
+certification.
+    
+For this project, you will build a survey form to collect 
+data from your users
+                        </pre>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <br><br>
+
+        <div id="c2">
+            <ul type="CIRCLE">
+                <div class="list2" id="div2" onclick="myFunction2()">
+                    <li>
+                        <pre id="change2">Learn the CSS Box Model by Building a  &#65088;
+Rothko Painting
+</pre>
+                    </li>
+                </div>
+                <div id="show2" hidden>
+                    <pre id="showpre2">Ecery HTML element is its own box-with its own spacing and a 
+border. This is called the Box Model.
+
+In this course, you'll use CSS and the Box Model to create your 
+own Rothko-style rectangular art pieces.
+</pre>
+                    <table cellpadding="15">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>32</td>
+                            <td>33</td>
+                            <td>34</td>
+                            <td>35</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>40</td>
+                            <td>41</td>
+                            <td>42</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>45</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="list2">
+                    <li>
+                        <pre>Learn CSS Flexbox by Building a Photo  &#65088;
+Gallery
+                        </pre>
+                    </li>
+                </div>
+                <div class="list2">
+                    <li>
+                        <pre>Learn Typography by Building a         &#65088;
+Nutritional Label</pre>
+                    </li>
+                </div>
+                <div class="list2">
+                    <li>
+                        <pre>Learn Accessibility by Building a Quiz &#65088;</pre>
+                    </li>
+                    <br>
+                </div>
+                <div id="list2div">
+                    <br>
+                    <span class="alertinfo">
+                        Certification Project
+                    </span>
+                    <br><br>
+                    <li class="list2">
+                        Tribute Page
+                        <div>
+                            <pre id="list2_data">This is one of the required projects to earn your
+certification.
+    
+For this project, you will build a Tribute page for a  
+subject of your choosing, fictional or real.
+                        </pre>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <br><br>
+
+        <div id="c3">
+            <ul type="CIRCLE">
+                <div class="list3" id="div3" onclick="myFunction3()">
+                    <li>
+                        <pre id="change3">Learn More About CSS Pseudo Selectors     &#65088;
+By Building A Balance Sheet
+</pre>
+                    </li>
+                </div>
+                <div id="show3" hidden>
+                    <pre id="showpre3">You can use CSS pseudo selectors to change specific HTML  
+elements
+
+In this course, you'll build a balance sheet using pseudo
+selectors. You'll learn how to change the style of an element
+when you hover over it with your mouse, and trigger other
+events on your webpage.
+</pre>
+                    <table cellpadding="10">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>32</td>
+                            <td>33</td>
+                            <td>34</td>
+                            <td>35</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>40</td>
+                            <td>41</td>
+                            <td>42</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>45</td>
+                            <td>46</td>
+                            <td>47</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td>50</td>
+                            <td>51</td>
+                            <td>52</td>
+                            <td>53</td>
+                            <td>54</td>
+                            <td>55</td>
+                            <td>56</td>
+                            <td>57</td>
+                            <td>58</td>
+                            <td>59</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>61</td>
+                            <td>62</td>
+                            <td>63</td>
+                            <td>64</td>
+                            <td>65</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="list3">
+                    <li>
+                        <pre>Learn Intermediate CSS by Building a      &#65088;
+Picasso Painting
+                        </pre>
+                    </li>
+                </div>
+                <div class="list3">
+                    <li>
+                        <pre>Learn Responsive Web Design by Building   &#65088;
+a Piano</pre>
+                    </li>
+                </div>
+                <div id="list3div">
+                    <br>
+                    <span class="alertinfo">
+                        Certification Project
+                    </span>
+                    <br><br>
+                    <li class="list3">
+                        Technical Documentation Page
+                        <div>
+                            <pre id="list3_data">This is one of the required projects to earn your
+certification.
+    
+For this project, you will build a technical Documentation
+page to serve sa instruction or reference for a topic.
+                        </pre>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <br><br>
+
+
+
+
+
+
+        <div id="c4">
+            <ul type="CIRCLE">
+                <div class="list4" id="div4" onclick="myFunction4()">
+                    <li>
+                        <pre id="change4">Learn CSS Variables by Building a City  &#65088;
+Skyline
+</pre>
+                    </li>
+                </div>
+                <div id="show4" hidden>
+                    <pre id="showpre4">CSS variables help you organize your styles and reuse them
+
+In this course, you'll build a city skyline. You'll learn how to
+configure CSS variables so you can refuse them whenever
+you want
+</pre>
+                    <table cellpadding="10">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>32</td>
+                            <td>33</td>
+                            <td>34</td>
+                            <td>35</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>40</td>
+                            <td>41</td>
+                            <td>42</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>45</td>
+                            <td>46</td>
+                            <td>47</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td>50</td>
+                            <td>51</td>
+                            <td>52</td>
+                            <td>53</td>
+                            <td>54</td>
+                            <td>55</td>
+                            <td>56</td>
+                            <td>57</td>
+                            <td>58</td>
+                            <td>59</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>61</td>
+                            <td>62</td>
+                            <td>63</td>
+                            <td>64</td>
+                            <td>65</td>
+                            <td>66</td>
+                            <td>67</td>
+                            <td>68</td>
+                            <td>69</td>
+                            <td>70</td>
+                            <td>71</td>
+                            <td>72</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="list4">
+                    <li>
+                        <pre>Learn CSS Grid by building a Magazine   &#65088;
+Picasso Painting
+                        </pre>
+                    </li>
+                </div>
+                <div id="list4div">
+                    <br>
+                    <span class="alertinfo">
+                        Certification Project
+                    </span>
+                    <br><br>
+                    <li class="list4">
+                        Product Landing Page
+                        <div>
+                            <pre id="list4_data">This is one of the required projects to earn your
+certification.
+    
+For this project, you will build a product landing page to
+market a product of your choice.
+                        </pre>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <br><br>
+
+
+
+
+        <div id="c5">
+            <ul type="CIRCLE">
+                <div class="list5" id="div5" onclick="myFunction5()">
+                    <li>
+                        <pre id="change5">Learn CSS tranforms by Building a        &#65088;
+Penguin
+</pre>
+                    </li>
+                </div>
+                <div id="show5" hidden>
+                    <pre id="showpre5">You can transform HTML elements to create appealing
+designs that draw your reader's eye. You can use
+tranforms to rotate elements, scale them, and more.
+
+In this course, you'll build a penguin. You'll use CSS transforms to 
+position and resize the parts of your penguin, create a background, and animate
+your work.
+</pre>
+                    <table cellpadding="10">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>32</td>
+                            <td>33</td>
+                            <td>34</td>
+                            <td>35</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>40</td>
+                            <td>41</td>
+                            <td>42</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>45</td>
+                            <td>46</td>
+                            <td>47</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td>50</td>
+                            <td>51</td>
+                            <td>52</td>
+                            <td>53</td>
+                            <td>54</td>
+                            <td>55</td>
+                            <td>56</td>
+                            <td>57</td>
+                            <td>58</td>
+                            <td>59</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>61</td>
+                            <td>62</td>
+                            <td>63</td>
+                            <td>64</td>
+                            <td>65</td>
+                            <td>66</td>
+                            <td>67</td>
+                            <td>68</td>
+                            <td>69</td>
+                            <td>70</td>
+                            <td>71</td>
+                            <td>72</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="list5">
+                    <li>
+                        <pre>Learn CSS Animation by Building a Ferris &#65088;
+Wheel</pre>
+                    </li>
+                </div>
+                <div id="list5div">
+                    <br>
+                    <span class="alertinfo">
+                        Certification Project
+                    </span>
+                    <br><br>
+                    <li class="list5">
+                        Personal Portfolio Webpage
+                        <div>
+                            <pre id="list5_data">This is one of the required projects to earn your
+certification.
+    
+For this project, you will build your own personal
+portfolio page.
+                        </pre>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <br><br>
+        <br><br><br>
+
+        <button id="endbutton">Go to settings to claim your certification</button>
+
+
+
+
+    </div><br>
+    <footer class="foot">
+        <div class="left-foot">
+            <p>
+                freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax
+                Identification Number: 82-0779546)
+            </p>
+            <br>
+            <p>
+                Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos,
+                articles, and interactive coding lessons - all freely available to the public. We also have thousands of
+                freeCodeCamp study groups around the world.
+            </p>
+            <br>
+            <p>
+                Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and
+                staff.
+            </p>
+            <p>
+                You can <a href="donate.html"> <b> make a tax-deductible donation here.</b></a>
+            </p>
+
+        </div>
+        <div class="right-foot">
+            <h4>Trending Guides</h4>
+            <div class="part1">
+                <p><a href="https://www.freecodecamp.org/news/zoom-screen-sharing-how-to-share-my-screen-on-zoom-solved/">Zoom Screen Sharing</a></p>
+                <p><a href="https://www.freecodecamp.org/news/decimal-place-value-hundreds-thousandths-and-beyond/">Decimal Place Value</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-get-into-bios-in-windows-10-bios-setup-pc-guide/">How to Get Into BIOS</a></p>
+                <p><a href="https://www.freecodecamp.org/news/string-to-int-in-c-how-to-convert-a-string-to-an-integer-example/">String to Int in C++</a></p>
+                <p><a href="https://www.freecodecamp.org/news/what-is-msmpeng-exe-why-is-it-of-high-cpu-disk-usage/">What is msmpeng.exe</a></p>
+                <p><a href="https://www.freecodecamp.org/news/why-is-my-facetime-not-working/">Facetime Not Working</a></p>
+                <p><a href="dim.html">Desktop Icons Missing</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-copy-and-paste-on-a-computer-windows-pc-keyboard-shortcut-guide/">How to Copy and Paste</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-delete-a-page-in-word-remove-blank-or-extra-pages/">Delete a Page in Word</a></p>
+                <p><a href="https://www.freecodecamp.org/news/vcruntime140-dll-was-not-found-solved-on-windows-10-pc/">vcruntime140.dll Error</a></p>
+
+            </div>
+            <div class="part2">
+                <p><a href="https://www.freecodecamp.org/news/c-vector-std-pattern-vector-in-cpp-with-example-code/">C++ Vector</a></p>
+                <p><a href="https://www.freecodecamp.org/news/what-is-cpu-meaning-definition-and-what-cpu-stands-for/">What is CPU</a></p>
+                <p><a href="https://www.freecodecamp.org/news/ipv4-vs-ipv6-what-is-the-difference-between-ip-addressing-schemes/">IPV4 vs IPV6</a></p>
+                <p><a href="iptv.html">What is IPTV</a></p>
+                <p><a href="https://www.freecodecamp.org/news/html-font-size-how-to-change-text-size-using-inline-css-style/">HTML Font Size</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-change-mouse-dpi-settings-in-windows-10/">Change Mouse DPI</a></p>
+                <p><a href="gif page.html">How to Make a GIF</a></p>
+                <p><a href="https://www.freecodecamp.org/news/git-rename-branch-how-to-change-a-local-branch-name/">Git Rename Branch</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-make-a-video-game-create-your-own-game-from-scratch-tutorial/">Make a Video Game</a></p>
+                <p><a href="https://www.freecodecamp.org/news/media-query-css-example-max-and-min-screen-width-for-mobile-responsive-design/">CSS Media Queries</a></p>
+
+            </div>
+            <div class="part3">
+                <p><a href="https://www.freecodecamp.org/news/dat-file-how-to-open-the-dat-file-format-extension/">How to Open .dat Files</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-record-a-phone-call-on-iphone/">Record Calls on iPhone</a></p>
+                <p><a href="desc order.html">Ascending vs Descending</a></p>
+                <p><a href="https://www.freecodecamp.org/news/mailto-link-how-to-make-an-html-email-link-example-code/">HTML Email Link Tutorial</a></p>
+                <p><a href="https://www.freecodecamp.org/news/list-comprehension-in-python-with-code-examples/">Python List Comprehension</a></p>
+                <p><a href="https://www.freecodecamp.org/news/password-protect-zip-file-windows10/">Password Protect Zip File</a></p>
+                <p><a href="https://www.freecodecamp.org/news/how-to-recover-an-unsaved-word-document-restore-a-deleted-word-file/">Restore Deleted Word File</a></p>
+                <p><a href="https://www.freecodecamp.org/news/what-is-software-engineering-how-to-become-a-software-engineer/">Software Engineering Guide</a></p>
+                <p><a href="https://www.freecodecamp.org/news/what-is-my-ip-address-for-my-router-how-to-find-your-wifi-address/">How to Find Your IP Address</a></p>
+                <p><a href="https://www.freecodecamp.org/news/iphone-downloads-folder-where-are-my-downloads-ios-and-ipad/">How to Find iPhone Download</a></p>
+                
+            </div>
+        </div>
+    </footer>
+    <hr style="border-top: 3px solid #aaa; margin: 0px 50px 0px 50px;">
+    <footer class="about">
+        <pre>
+            <a href="about.html">About</a>  <a href="#">Alumni Network</a>  <a href="#">Open Source</a>  <a href="#">Shop</a>  <a href="#">Support</a>  <a href="#">Sponsors</a>  <a href="#">Academic Honesty</a>  <a href="#">Code of Conduct</a>  <a href="privacypolicy.html">Privacy Policy</a>  <a href="#">Terms of Service</a>  <a href="#">Copyright Policy</a></pre>
+
+    </footer>
+</body>
+<script>
+    function my1Function() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+
+    }
+
+
+    function myFunction() {
+        let x = document.getElementById("show");
+        if (x.style.display === "none") {
+            document.getElementById('change').innerHTML = "Learn HTML by Building a Cat Photo App &#65087;"
+            x.style.display = "block";
+        } else {
+            document.getElementById('change').innerHTML = "Learn HTML by Building a Cat Photo App &#65088;"
+            x.style.display = "none";
+        }
+    }
+
+
+    function myFunction2() {
+        let x = document.getElementById("show2");
+        if (x.style.display === "none") {
+            document.getElementById('change2').innerHTML = "Learn the CSS Box Model by Building a  &#65087;<br>Rothko Painting"
+            x.style.display = "block";
+        } else {
+            document.getElementById('change2').innerHTML = "Learn the CSS Box Model by Building a  &#65088;<br>Rothko Painting"
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction3() {
+        let x = document.getElementById("show3");
+        if (x.style.display === "none") {
+            document.getElementById('change3').innerHTML = "Learn More About CSS Pseudo Selectors     &#65087; <br>By Building A Balance Sheet"
+            x.style.display = "block";
+        } else {
+            document.getElementById('change3').innerHTML = "Learn More About CSS Pseudo Selectors     &#65088;<br>By Building A Balance Sheet"
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction4() {
+        let x = document.getElementById("show4");
+        if (x.style.display === "none") {
+            document.getElementById('change4').innerHTML = "Learn CSS Variables by Building a City  &#65087; <br>Skyline"
+            x.style.display = "block";
+        } else {
+            document.getElementById('change4').innerHTML = "Learn CSS Variables by Building a City  &#65088;<br>Skyline"
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction5() {
+        let x = document.getElementById("show5");
+        if (x.style.display === "none") {
+            document.getElementById('change5').innerHTML = "Learn CSS Variables by Building a City   &#65087; <br>Skyline"
+            x.style.display = "block";
+        } else {
+            document.getElementById('change5').innerHTML = "Learn CSS Variables by Building a City   &#65088;<br>Skyline"
+            x.style.display = "none";
+        }
+    }
+
+
+
+
+
+</script>
+
+</html>

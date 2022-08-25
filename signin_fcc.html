@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to freeCodeCamp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: auto;
+            font-family: 'Roboto Mono', monospace;            
+        }
+        header{
+            color: aliceblue;
+            position: sticky;
+            padding: 0px 0px 2px;
+            background-color: #0a0a23;
+            font-family: 'Roboto Mono', monospace;
+            top: 0;
+            font-size: 24px;
+            padding-left: 650px;
+        }
+        .courses{
+        margin-left: 515px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        border: 3px solid;
+        padding: 10px 16px 10px 16px;
+        width: 500px;
+        font-family: "Roboto Mono",monospace;
+        font-size: 22px;
+        min-height: 50px;
+        background-color: rgb(208, 208, 213);
+        border-color: rgb(27, 27, 50);
+    }
+    .courses:hover{
+        background-color: #0a0a23;
+        color: rgb(245, 246, 247);
+    }
+
+form {
+    width: 500px;
+    background: #fff;
+    padding: 15px 40px 20px 45px;
+    /* border: 1px solid #ccc; */
+    font-family: "Roboto Mono",monospace;
+    font-size: 21px;
+    margin: 55px auto 0;
+    margin-left: 465px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px
+}
+
+label i {
+    color: gray;
+    font-size: 80%;
+}
+
+input,
+select {
+    border: 3px solid #0a0a23;
+    padding: 20px;
+    display: block;
+    font-family: "Roboto Mono",monospace;
+    font-size: 21px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+
+
+.row {
+    padding-bottom: 10px;
+}
+
+ .form-inline {
+    border: 3px solid #0a0a23;
+    padding: 8px 10px 4px;
+    border-radius: 2px;
+}
+
+.form-inline label,
+.form-inline input {
+    display: inline-block;
+    width: auto;
+    padding-right: 15px;
+}
+
+.error {
+    color: red;
+    font-size: 90%;
+}
+
+input[type="submit"] {
+    background: rgb(208, 208, 213) ;
+    border-color: #0a0a23;
+    color: #0a0a23;
+    font-size: larger;
+}
+input[type="submit"]:hover{
+    background-color: #0a0a23;
+    color: aliceblue;
+    cursor: pointer;
+}
+.note{
+    position: absolute;
+    left: 350px;
+    margin-right: 300px;
+    font-size: 80%;
+}
+.note a{
+    color: #0a0a23;
+}
+.note a:hover{
+    background-color: lightgray;
+    text-decoration: none;
+}
+
+    
+
+    </style>
+</head>
+<body>
+    <header >
+            <strong>freeCodeCamp</strong><i class="fa fa-free-code-camp fa-lg" aria-hidden="true"></i>
+    </header>
+    <button class="courses" onclick="window.open('https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?response_type=code&redirect_uri=https%3A%2F%2Fauth.freecodecamp.org%2Flogin%2Fcallback&scope=email%20profile&state=Jed0JsUFGWAClFykDSaJVFUooOWetVXQ&client_id=826551350114-oi2e02j2ub945js34vsso6v2h0blm37c.apps.googleusercontent.com&flowName=GeneralOAuthFlow')">Continue with Google</button>
+    <button class="courses" style="margin-top: 20px;" onclick="window.open('https://github.com/login?client_id=80a8e8840a91a529831e&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D80a8e8840a91a529831e%26redirect_uri%3Dhttps%253A%252F%252Fauth.freecodecamp.org%252Flogin%252Fcallback%26response_type%3Dcode%26scope%3Duser%253Aemail%26state%3D6mym8LmSe7TPRHmuPtXeMJ6xHS_O5Ycc')">Continue with GitHub</button>
+    <br><span style="margin-left: 50%; font-weight:bolder;">or</span>
+    <hr style="color:rgb(27, 27, 50); height: 3px; background-color: #0a0a23; width: 350px;">
+
+    <form name="contactForm" onsubmit="return validateForm();">
+
+        
+        <div class="row">
+            <label>Full Name</label>
+            <input type="text" name="name">
+            <div class="error" id="nameErr"></div>
+        </div>
+        <div class="row">
+            <label>Email Address</label>
+            <input type="text" name="email">
+            <div class="error" id="emailErr"></div>
+        </div>
+        <div class="row">
+            <label>Mobile Number</label>
+            <input type="text" name="mobile" maxlength="10">
+            <div class="error" id="mobileErr"></div>
+        </div>
+        <div class="row">
+            <label>Country</label>
+            <select name="country">
+                <option class="opt">Select</option>
+                <option class="opt">India</option>
+                <option class="opt">Canada</option>
+                <option class="opt">United Kingdom</option>
+            </select>
+            <div class="error" id="countryErr"></div>
+        </div>
+        <div class="row">
+            <label>Gender</label>
+            <div class="form-inline">
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+            </div>
+            <div class="error" id="genderErr"></div>
+        </div>
+        
+        <div class="row">
+            <input type="submit" value="Email me a Sign-In code">
+        </div>
+
+        <div class="res" id="results"></div>
+        <div class="note">
+            <p>
+                freeCodeCamp is free and your accond is private by default. We use your email address to store your curriculum progress. By continuing, you indicate that you have read and agree to freeCodeCamp.org's <a href="https://www.freecodecamp.org/news/terms-of-service/">Terms of Service</a> and <a href="privacypolicy.html">Privacy Policy</a>.
+            </p>
+        </div>
+    </form>
+<script>
+    function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+// Defining a function to validate form
+function validateForm() {
+    // Retrieving the values of form elements
+    var name = document.contactForm.name.value;
+    var email = document.contactForm.email.value;
+    var mobile = document.contactForm.mobile.value;
+    var country = document.contactForm.country.value;
+    var gender = document.contactForm.gender.value;
+
+    // Defining error variables with a default value
+    var nameErr = emailErr = mobileErr = countryErr = genderErr = true;
+
+    // Validate name
+    if (name == "") {
+        printError("nameErr", "Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;
+        if (regex.test(name) === false) {
+            printError("nameErr", "Please enter a valid name");
+        } else {
+            printError("nameErr", "");
+            nameErr = false;
+        }
+    }
+
+    // Validate email address
+    if (email == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if (regex.test(email) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else {
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+
+    // Validate mobile number
+    if (mobile == "") {
+        printError("mobileErr", "Please enter your mobile number");
+    } else {
+        var regex = /^[1-9]\d{9}$/;
+        if (regex.test(mobile) === false) {
+            printError("mobileErr", "Please enter a valid 10 digit mobile number");
+        } else {
+            printError("mobileErr", "");
+            mobileErr = false;
+        }
+    }
+
+    // Validate country
+    if (country == "Select") {
+        printError("countryErr", "Please select your country");
+    } else {
+        printError("countryErr", "");
+        countryErr = false;
+    }
+
+    // Validate gender
+    if (gender == "") {
+        printError("genderErr", "Please select your gender");
+    } else {
+        printError("genderErr", "");
+        genderErr = false;
+    }
+
+    // Prevent the form from being submitted if there are any errors
+    if ((nameErr || emailErr || mobileErr || countryErr || genderErr) == true) {
+        return false;
+    } else {
+        // Creating a string from input data for preview
+        // var dataPreview = "You've entered the following details: \n" +
+        // "Full Name: " + name + "\n" +
+        //     "Email Address: " + email + "\n" +
+        //     "Mobile Number: " + mobile + "\n" +
+        //     "Country: " + country + "\n" +
+        //     "Gender: " + gender + "\n";
+        // // Display input data in a dialog box before submitting the form
+        // alert(dataPreview);
+         window.open("curr.html");
+        // window.location.href="\index.html";
+    }
+};
+</script>
+</body>
+</html>
